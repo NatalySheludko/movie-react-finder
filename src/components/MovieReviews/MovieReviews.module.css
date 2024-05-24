@@ -1,0 +1,18 @@
+.wrap {
+	background-color: antiquewhite;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.text {
+	color: black;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.title {
+	color: black;
+	font-size: 18px;
+	font-weight: 500;
+}

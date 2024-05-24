@@ -1,0 +1,33 @@
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  column-gap: 20px;
+}
+
+.input {
+  padding: 10px 50px;
+  outline: 1px solid transparent;
+  border-radius: 8px;
+  color: rgb(11, 11, 11);
+  border: none;
+}
+
+.input::placeholder {
+  color: rgb(164, 162, 162);
+}
+
+.btn {
+  background-color: rgb(148, 143, 141);
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  border: none;
+}
+
+.btn:focus,
+.btn:hover {
+  background-color: #0a6847;
+}

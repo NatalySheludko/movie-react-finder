@@ -1,0 +1,27 @@
+.title {  
+  font-size: 20px;
+  font-family: "Orbitron", sans-serif;
+}
+
+.img {
+  margin-bottom: 20px;
+}
+
+.trendMovieWrap {
+  padding: 50px 50px 0px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.items {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f4dfc8;
+  border-radius: 5px;
+  text-align: center;
+}

@@ -1,0 +1,21 @@
+.navWrap {
+  display: flex;
+  column-gap: 70px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4dfc8;
+  font-family: "Bungee Shade", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 80px;
+}
+
+.link {
+  color: black;
+}
+
+.active {
+  color: #0a6847;
+  text-shadow: -4px -9px 38px rgba(0, 0, 0, 0.2);
+}
