@@ -4,6 +4,7 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import Loading from "../Loading/Loading";
 import { getMovieReviews } from "../Api/movieApi";
 import css from "../MovieReviews/MovieReviews.module.css";
+import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 
 export default function MovieReviews() {
   const { movieId } = useParams();
@@ -11,6 +12,7 @@ export default function MovieReviews() {
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
     if (!movieId) {
@@ -23,9 +25,14 @@ export default function MovieReviews() {
         setIsLoading(true);
         setIsError(false);
         const data = await getMovieReviews(movieId, page);
-        setReviews(data.results);
-        setPage(1);
-        console.log(data);
+        setReviews((prevMovies) => {
+          const movieIds = new Set(prevMovies.map((movie) => movie.id));
+          const newMovies = data.results.filter(
+            (movie) => !movieIds.has(movie.id)
+          );
+          return [...prevMovies, ...newMovies];
+        });
+        setTotalPages(data.total_pages);
       } catch (error) {
         setIsError(true);
       } finally {
@@ -34,6 +41,10 @@ export default function MovieReviews() {
     }
     fetchMoviesReviews();
   }, [movieId, page]);
+
+  const handleLoadMore = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
 
   return (
     <>
@@ -49,6 +60,9 @@ export default function MovieReviews() {
             </li>
           ))}
         </ul>
+      )}
+      {reviews.length > 0 && !isLoading && page < totalPages && (
+        <LoadMoreBtn onClick={handleLoadMore} />
       )}
     </>
   );

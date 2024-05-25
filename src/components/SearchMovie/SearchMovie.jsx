@@ -12,6 +12,7 @@ export default function SearchMovie({ onSearch }) {
         if (!values.movie.trim()) {
           return notify();
         }
+
         onSearch(values.movie);
         actions.resetForm();
       }}

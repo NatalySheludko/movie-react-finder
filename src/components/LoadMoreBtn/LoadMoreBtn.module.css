@@ -1,0 +1,15 @@
+.btn {
+	display: flex;
+	margin: 20px auto;
+  background-color: rgb(148, 143, 141);
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  border: none;
+}
+
+.btn:focus,
+.btn:hover {
+  background-color: #0a6847;
+}

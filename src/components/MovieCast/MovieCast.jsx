@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import Loading from "../Loading/Loading";
 import { getMovieCredits } from "../Api/movieApi";
-import { defaultImg } from "../../defaultImg";
+import { DEFAULT_IMG } from "../../defaultImg";
 import css from "../MovieCast/MovieCast.module.css";
 
 export default function MovieCast() {
@@ -44,13 +44,13 @@ export default function MovieCast() {
                 src={
                   actor.profile_path
                     ? `https://image.tmdb.org/t/p/w200/${actor.profile_path}`
-                    : defaultImg
+                    : DEFAULT_IMG
                 }
                 width={200}
                 alt={actor.name}
               />
               <p>{actor.name}</p>
-              <p>Character: {actor.character}</p>
+              {actor.character && <p>Character: {actor.character}</p>}
             </li>
           ))}
         </ul>

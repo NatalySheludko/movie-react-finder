@@ -10,6 +10,8 @@
   font-weight: 500;
   border: none;
   margin-bottom: 30px;
+  display: block;
+  width: 75px;
 }
 
 .btn:focus,
@@ -48,18 +50,18 @@ h2 {
 }
 
 .list {
-	border: 1px solid #f4dfc8;
+  border: 1px solid #f4dfc8;
   padding: 10px 17px;
   border-radius: 8px;
-	color: #0a6847;
+  color: #0a6847;
 }
 
 .link {
-	display: flex;
-	column-gap: 10px;
+  display: flex;
+  column-gap: 10px;
 }
 
 .text {
-  color: #0a6847;  
+  color: #0a6847;
   font-weight: 600;
 }

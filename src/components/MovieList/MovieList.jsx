@@ -1,8 +1,9 @@
 import css from "../MovieList/MoviesList.module.css";
-import { Link } from "react-router-dom";
-import { defaultImg } from "../../defaultImg";
+import { Link, useLocation } from "react-router-dom";
+import { DEFAULT_IMG } from "../../defaultImg";
 
 export default function MovieList({ movies = [], trendMovie = [] }) {
+  const location = useLocation();
   return (
     <>
       <div>
@@ -14,13 +15,17 @@ export default function MovieList({ movies = [], trendMovie = [] }) {
                 src={
                   trend.backdrop_path
                     ? `https://image.tmdb.org/t/p/w200/${trend.backdrop_path}`
-                    : defaultImg
+                    : DEFAULT_IMG
                 }
                 width={230}
                 alt={trend.original_title}
               />
               <p>
-                <Link className={css.title} to={`/movies/${trend.id}`}>
+                <Link
+                  className={css.title}
+                  to={`/movies/${trend.id}`}
+                  state={location}
+                >
                   {trend.original_title}
                 </Link>
               </p>
@@ -37,20 +42,24 @@ export default function MovieList({ movies = [], trendMovie = [] }) {
                 src={
                   movie.backdrop_path
                     ? `https://image.tmdb.org/t/p/w200/${movie.backdrop_path}`
-                    : defaultImg
+                    : DEFAULT_IMG
                 }
                 width={230}
                 alt={movie.original_title}
               />
               <p>
-                <Link className={css.title} to={`/movies/${movie.id}`}>
+                <Link
+                  className={css.title}
+                  to={`/movies/${movie.id}`}
+                  state={location}
+                >
                   {movie.title}
                 </Link>
               </p>
             </li>
           ))}
         </ul>
-      </div>
+			</div>
     </>
   );
 }

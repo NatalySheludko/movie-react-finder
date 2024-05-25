@@ -11,11 +11,11 @@ const options = {
 };
 
 //* START SEARCH MOVIE
-export const getMovies = async (movie, currPage) => {
+export const getMovies = async (query, page) => {
   const params = {
     params: {
-      query: movie,
-      page: currPage,
+      query,
+      page,
       language: "en-US",
       include_adult: false,
       api_key: API_KEY,
@@ -42,7 +42,7 @@ export const getMovieById = async (movieId) => {
 //* START SEARCH MOVIE CASTS
 export const getMovieCredits = async (movieId) => {
   const params = {
-    params: {
+		params: {
       api_key: API_KEY,
       language: "en-US",
     },
@@ -53,11 +53,11 @@ export const getMovieCredits = async (movieId) => {
 };
 
 //* START SEARCH MOVIE REVIEWS
-export const getMovieReviews = async (movieId, currPage) => {
+export const getMovieReviews = async (movieId, page) => {
   const params = {
     params: {
       api_key: API_KEY,
-      page: currPage,
+      page,
       total_pages: 1,
     },
   };
@@ -67,9 +67,10 @@ export const getMovieReviews = async (movieId, currPage) => {
 };
 
 //* START SEARCH TRENDING MOVIE
-export const getTrendingMovie = async () => {
+export const getTrendingMovie = async (page) => {
   const params = {
-    params: {
+		params: {
+			page,
       api_key: API_KEY,
       language: "en-US",
     },
