@@ -1,18 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Orbitron:wght@400..900&display=swap");
-
-body {
-  font-family: "Encode Sans Expanded", sans-serif;
-  background-color: black;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
 p {
-	color: #f4dfc8;
   margin: 0;
 }
 
@@ -22,7 +13,6 @@ p:last-child {
 
 ul,
 ol {
-	color: #f4dfc8;
   margin: 0;
   padding: 0;
   list-style: none;
