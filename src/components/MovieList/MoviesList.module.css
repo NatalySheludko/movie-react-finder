@@ -1,4 +1,8 @@
-.title {  
+.movieList {
+  margin-bottom: 20px;
+}
+
+.title {
   font-size: 20px;
   font-family: "Orbitron", sans-serif;
 }

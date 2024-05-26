@@ -5,7 +5,7 @@ import { DEFAULT_IMG } from "../../defaultImg";
 export default function MovieList({ movies = [], trendMovie = [] }) {
   const location = useLocation();
   return (
-    <>
+    <div className={css.movieList}>
       <div>
         <ul className={css.trendMovieWrap}>
           {trendMovie.map((trend) => (
@@ -60,6 +60,6 @@ export default function MovieList({ movies = [], trendMovie = [] }) {
           ))}
         </ul>
 			</div>
-    </>
+    </div>
   );
 }
