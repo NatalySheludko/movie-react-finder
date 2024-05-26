@@ -1,10 +1,12 @@
 .app {
   font-family: "Encode Sans Expanded", sans-serif;
   background-color: black;
-	padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
-h1, h2, p, ul
- {
+h1,
+h2,
+p,
+ul {
   color: #f4dfc8;
 }
