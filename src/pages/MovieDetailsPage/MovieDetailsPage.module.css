@@ -37,6 +37,13 @@ p {
   font-weight: 200;
 }
 
+.img{
+	height: 320px;
+	width: 250px;
+  object-fit: cover;
+	border-radius: 4px;
+}
+
 h2 {
   font-weight: 400;
   margin-bottom: 20px;

@@ -14,10 +14,9 @@ export default function MovieList({ movies = [], trendMovie = [] }) {
                 className={css.img}
                 src={
                   trend.backdrop_path
-                    ? `https://image.tmdb.org/t/p/w200/${trend.backdrop_path}`
+                    ? `https://image.tmdb.org/t/p/original/${trend.backdrop_path}`
                     : DEFAULT_IMG
                 }
-                width={230}
                 alt={trend.original_title}
               />
               <p>
@@ -41,10 +40,9 @@ export default function MovieList({ movies = [], trendMovie = [] }) {
                 className={css.img}
                 src={
                   movie.backdrop_path
-                    ? `https://image.tmdb.org/t/p/w200/${movie.backdrop_path}`
+                    ? `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`
                     : DEFAULT_IMG
                 }
-                width={230}
                 alt={movie.original_title}
               />
               <p>
@@ -59,7 +57,7 @@ export default function MovieList({ movies = [], trendMovie = [] }) {
             </li>
           ))}
         </ul>
-			</div>
+      </div>
     </div>
   );
 }

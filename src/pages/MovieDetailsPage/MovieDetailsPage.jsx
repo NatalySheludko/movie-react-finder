@@ -53,12 +53,12 @@ export default function MovieDetailsPage() {
 
           <div className={css.titleInfo}>
             <img
+              className={css.img}
               src={
                 movie.backdrop_path
-                  ? `https://image.tmdb.org/t/p/w200/${movie.backdrop_path}`
+                  ? `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`
                   : DEFAULT_IMG
               }
-              width={200}
               alt={movie.original_title}
             />
 

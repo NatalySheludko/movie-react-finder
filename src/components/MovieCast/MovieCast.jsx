@@ -41,12 +41,12 @@ export default function MovieCast() {
           {credits.map((actor) => (
             <li className={css.items} key={actor.id}>
               <img
+                className={css.img}
                 src={
                   actor.profile_path
-                    ? `https://image.tmdb.org/t/p/w200/${actor.profile_path}`
+                    ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}`
                     : DEFAULT_IMG
                 }
-                width={200}
                 alt={actor.name}
               />
               <p>{actor.name}</p>

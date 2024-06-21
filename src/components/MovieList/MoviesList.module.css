@@ -17,15 +17,20 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 20px;
-}
+} 
 
-.items {
+ .items {
   padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #f4dfc8;
-  border-radius: 5px;
   text-align: center;
+}
+
+.img{
+	height: 320px;
+	width: 250px;
+  object-fit: cover;
+	border-radius: 4px;
 }

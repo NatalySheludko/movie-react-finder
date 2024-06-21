@@ -5,6 +5,14 @@
   gap: 20px;
 }
 
+.img{
+	height: 220px;
+	width: 150px;
+	margin-bottom: 15px;
+  object-fit: cover;
+	border-radius: 4px;
+}
+
 .items {
   display: flex;
   flex-direction: column;
