@@ -1,4 +1,4 @@
-import { Outlet, useParams, useLocation } from "react-router-dom";
+import { Outlet, useParams, useLocation, useNavigate } from "react-router-dom";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { getMovieById } from "../../components/Api/movieApi";
 import { NavLink, Link } from "react-router-dom";
@@ -17,6 +17,7 @@ export default function MovieDetailsPage() {
   const [isError, setIsError] = useState(false);
   const location = useLocation();
   const backLinkRef = useRef(location.state ?? "/");
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!movieId) {
@@ -29,6 +30,13 @@ export default function MovieDetailsPage() {
         setIsError(false);
         const data = await getMovieById(movieId);
         setMovie(data);
+        const currentPath = window.location.pathname;
+        if (
+          !currentPath.includes(`/movies/${movieId}/cast`) &&
+          !currentPath.includes(`/movies/${movieId}/reviews`)
+        ) {
+          navigate(`/movies/${movieId}/cast`);
+        }
       } catch (error) {
         setIsError(true);
       } finally {
@@ -36,7 +44,7 @@ export default function MovieDetailsPage() {
       }
     }
     fetchMoviesId();
-  }, [movieId]);
+  }, [movieId, navigate]);
 
   return (
     <div className={css.container}>
@@ -119,3 +127,4 @@ export default function MovieDetailsPage() {
     </div>
   );
 }
+
