@@ -8,6 +8,7 @@ The project aimed to develop a web application that allows users to search for p
 Engaged with lecturers, classmates, students, and GoIT team.
 
 ## Technical Stack:
+Adaptive design for desktop (1440px).
 Used HTML & CSS for the web app's structure and style, Vite + React for efficient state management and dynamic UI updates, and integrated various libraries for enhanced functionality. Leveraged Axios for API requests, Git for version control, and Vercel for deployment.
 
 ## Features:
