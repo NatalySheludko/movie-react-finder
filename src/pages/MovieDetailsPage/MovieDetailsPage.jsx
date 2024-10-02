@@ -52,44 +52,52 @@ export default function MovieDetailsPage() {
       {isLoading && <Loading />}
 
       {movie !== null && (
-        <div>
-          <IconContext.Provider value={{ size: "2em" }}>
-            <Link to={backLinkRef.current} className={css.btn}>
-              <IoMdArrowRoundBack />
-            </Link>
-          </IconContext.Provider>
+        <div className={css.content}>
+          <div
+            className={css.backgroundWrap}
+            style={{
+              backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
+            }}
+          >
+            <div className={css.overlay}></div>
+            <IconContext.Provider value={{ size: "2em" }}>
+              <Link to={backLinkRef.current} className={css.btn}>
+                <IoMdArrowRoundBack />
+              </Link>
+            </IconContext.Provider>
 
-          <div className={css.titleInfo}>
-            <img
-              className={css.img}
-              src={
-                movie.backdrop_path
-                  ? `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`
-                  : DEFAULT_IMG
-              }
-              alt={movie.original_title}
-            />
+            <div className={css.titleInfo}>
+              <img
+                className={css.img}
+                src={
+                  movie.backdrop_path
+                    ? `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`
+                    : DEFAULT_IMG
+                }
+                alt={movie.original_title}
+              />
 
-            <div>
-              <h1>{movie.title}</h1>
-              {movie.release_date !== "" && (
-                <p>({parseFloat(movie.release_date)})</p>
-              )}
-              <p>User score: {Math.round(movie.vote_average * 10)}%</p>
+              <div>
+                <h1>{movie.title}</h1>
+                {movie.release_date !== "" && (
+                  <p>({parseFloat(movie.release_date)})</p>
+                )}
+                <p>User score: {Math.round(movie.vote_average * 10)}%</p>
+              </div>
             </div>
+
+            <h2 className={css.detailsTitle}>Overview</h2>
+            <p>{movie.overview}</p>
+            <h2 className={css.detailsTitle}>Genres</h2>
+
+            <ul className={css.genre}>
+              {movie.genres.map((genre) => (
+                <li key={genre.id}>
+                  <p>{genre.name}</p>{" "}
+                </li>
+              ))}
+            </ul>
           </div>
-
-          <h2>Overview</h2>
-          <p>{movie.overview}</p>
-          <h2>Genres</h2>
-
-          <ul className={css.genre}>
-            {movie.genres.map((genre) => (
-              <li key={genre.id}>
-                <p>{genre.name}</p>{" "}
-              </li>
-            ))}
-          </ul>
 
           <h2>Additional information</h2>
 

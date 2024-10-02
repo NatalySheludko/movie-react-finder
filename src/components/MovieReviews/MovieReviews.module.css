@@ -1,18 +1,18 @@
 .wrap {
-	background-color: antiquewhite;
+	background-color: #4c4c00;
 	margin-bottom: 10px;
 	border-radius: 10px;
 	padding: 10px;
 }
 
 .text {
-	color: black;
+	color: antiquewhite;
 	font-size: 16px;
 	font-weight: 300;
 }
 
 .title {
-	color: black;
+	color: white;
 	font-size: 18px;
 	font-weight: 500;
 }
