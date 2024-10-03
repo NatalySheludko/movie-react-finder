@@ -6,14 +6,14 @@
   margin-bottom: 20px;
   padding: 40px;
   position: relative;
-  min-height: 100vh; 
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
   overflow: hidden;
-	background-color: yellow; 
-	color: black;
+  box-shadow: 0 8px 26px rgba(171, 168, 168, 0.3);
+  color: black;
 }
 
 .overlay {
@@ -21,18 +21,23 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;  
-  border-radius: 10px; 
+  bottom: 0;
+  border-radius: 10px;
   z-index: 1;
-	background-color: rgba(0, 0, 0, 0.7); 
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-.titleInfo, .genre, .additionalInfo, .btn, p, h2 {
+.titleInfo,
+.genre,
+.additionalInfo,
+.btn,
+p,
+h2 {
   position: relative;
-  z-index: 2; 
+  z-index: 2;
 }
 
-.btn {  
+.btn {
   padding: 5px 20px;
   border-radius: 8px;
   font-size: 17px;
@@ -41,7 +46,7 @@
   margin-bottom: 30px;
   display: block;
   width: 75px;
-	background-color: rgb(148, 143, 141);
+  background-color: rgb(148, 143, 141);
 }
 
 .btn:focus,
@@ -65,7 +70,7 @@ p {
   font-size: 20px;
   margin-bottom: 10px;
   font-weight: 200;
-	color: #faf6f0;
+  color: rgb(148, 145, 145);
 }
 
 .img {
@@ -85,15 +90,14 @@ h2 {
   display: flex;
   column-gap: 55px;
   margin-bottom: 30px;
-	
 }
 
-.list { 
+.list {
   padding: 10px 17px;
   border-radius: 8px;
   color: black;
-	background-color: rgb(148, 143, 141);
-	border: 1px solid #f4dfc8;
+  background-color: rgb(148, 143, 141);
+  border: 1px solid #f4dfc8;
 }
 
 .link {
@@ -101,8 +105,8 @@ h2 {
   column-gap: 10px;
 }
 
-.text { 
+.text {
   font-weight: 600;
-	color: black;
+  color: black;
 }
 
