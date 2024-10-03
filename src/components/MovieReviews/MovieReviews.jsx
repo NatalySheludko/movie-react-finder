@@ -47,14 +47,14 @@ export default function MovieReviews() {
   };
 
   return (
-    <>
+    <div className={css.wrap}>
       {isError && <ErrorMessage />}
       {isLoading && <Loading />}
       {reviews.length === 0 && <p>We don`t have any reviews for this movie</p>}
       {reviews.length > 0 && (
-        <ul>
+        <ul className={css.menuList}>
           {reviews.map((review) => (
-            <li className={css.wrap} key={review.id}>
+            <li className={css.list} key={review.id}>
               <h2 className={css.title}>Author: {review.author}</h2>
               <p className={css.text}>{review.content}</p>
             </li>
@@ -64,6 +64,7 @@ export default function MovieReviews() {
       {reviews.length > 0 && !isLoading && page < totalPages && (
         <LoadMoreBtn onClick={handleLoadMore} />
       )}
-    </>
+    </div>
   );
 }
+

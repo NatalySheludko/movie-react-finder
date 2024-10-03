@@ -1,18 +1,36 @@
-.wrap {
-	background-color: #4c4c00;
-	margin-bottom: 10px;
-	border-radius: 10px;
-	padding: 10px;
+.menuList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.list {
+  max-height: 400px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 8px 26px rgba(171, 168, 168, 0.3);
+  padding: 20px;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
 }
 
 .text {
-	color: antiquewhite;
-	font-size: 16px;
-	font-weight: 300;
+  color: rgb(148, 145, 145);
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .title {
-	color: white;
-	font-size: 18px;
-	font-weight: 500;
+  color: antiquewhite;
+  font-size: 18px;
+  font-weight: 500;
 }
+
