@@ -49,9 +49,9 @@ export default function MovieCast() {
                 }
                 alt={actor.name}
               />
-              <p>{actor.name}</p>
-              {actor.character && <p>Character: {actor.character}</p>}
-            </li>
+              <h2 className={css.name}>{actor.name}</h2>
+              <p>{actor.character && <p>Character: {actor.character}</p>}
+           </p> </li>
           ))}
         </ul>
       )}
